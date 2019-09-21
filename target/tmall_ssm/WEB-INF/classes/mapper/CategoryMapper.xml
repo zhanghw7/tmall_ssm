@@ -7,7 +7,7 @@
         select * from category order by id desc
     </select>
     <select id="listByPage" resultType="Category">
-        select * from category order by id desc
+        select * from category
         <if test="start!=null and count!=null">
          limit #{start} ,#{count}
          </if>
