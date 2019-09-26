@@ -6,14 +6,16 @@
     <select id="list" resultType="Category">
         select * from category order by id desc
     </select>
-    <select id="listByPage" resultType="Category">
-        select * from category
-        <if test="start!=null and count!=null">
-         limit #{start} ,#{count}
-         </if>
-
+    <insert id="add" keyProperty="id" useGeneratedKeys="true">
+        insert into category (name) values (#{name})
+    </insert>
+    <delete id="delete">
+        delete from category where id = #{id}
+    </delete>
+    <select id="get" resultType="Category">
+        select * from category where id =#{id}
     </select>
-    <select id="total" resultType="int">
-        select count(*) from category
-    </select>
+    <update id="update">
+        update category set name =#{name} where id =#{id}
+    </update>
 </mapper>

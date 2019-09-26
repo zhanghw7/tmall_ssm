@@ -18,15 +18,24 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryMapper.list();
     }
 
+
     @Override
-    public List<Category> listByPage(Page page) {
-        return categoryMapper.listByPage(page);
+    public void add(Category category) {
+        categoryMapper.add(category);
     }
 
     @Override
-    public int total() {
-        return categoryMapper.total();
+    public void delete(Category category) {
+        categoryMapper.delete(category);
     }
 
+    @Override
+    public Category get(int id) {
+       return categoryMapper.get(id);
+    }
 
+    @Override
+    public void update(Category category) {
+        categoryMapper.update(category);
+    }
 }
